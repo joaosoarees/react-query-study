@@ -1,30 +1,14 @@
-# React + TypeScript + Vite
+# Como rodar?
+Instale o node na versão 20 LTS;
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Use yarn como gerenciador de pacotes e rode o comando `yarn` para instalar as dependências;
 
-Currently, two official plugins are available:
+Use `yarn dev` para iniciar o projeto;
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Use `yarn dev:server` para iniciar o json-server simulando nossa API;
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## React Query - Anotações
+Loading States:
+- isPeding (bool) -> true quando o valor no cache for undefined(não houver valor no cache);
+- isFetching (bool) -> true sempre que a queryFn estiver executando, tanto na primeira ou nas subsequentes
+- isLoading (boold) -> true quando for o initalLoading da queryFn -> isLoading = isPending && isFetching
